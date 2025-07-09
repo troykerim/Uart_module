@@ -7,6 +7,7 @@ This project implements a UART communication system in Verilog, consisting of tw
 
 ### Reciever Results
 
+The screenshots below demostrate the RX (reciever) of this UART module to be working correctly.  Initiall the data line, called r_RX_Serial is held high.  The UART is waiting for the data line to transition to low, and begins to recieving data.  In this design, it takes approximately 8 ns for sampling to begin.  As shown in the 4th screenshot, the data line returns high as the value being recieved is 0x37 or 00110111. However, UART reads data from the LSB first, so that is why the data line returned back 1.  It takes approximatly 80 us for a data packet to be read.  The w_RX_DV is a flag that indicates that the data packet has finished.  This particular signal will be active for 1 clock cycle.  The console output verifies that the design worked in a condensed format.
 ![Reciever Console Output](./screenshots/RX_console.png)
 ![Reciever Output 1](./screenshots/RX_waveform1.png)
 ![Reciever Output 2](./screenshots/RX_waveform2.png)
@@ -15,6 +16,9 @@ This project implements a UART communication system in Verilog, consisting of tw
 ![Reciever Output 5](./screenshots/RX_waveform5.png)
 
 ### Transmitter Results
+
+The screenshots below illustrate the TX (transmitter) portion of the UART module in operation. To verify that the transmitter correctly sends data and that it is properly received, several internal signals are observed. The w_TX_Serial signal shows the serialized data stream being transmitted bit by bit, while w_UART_Line reflects the actual line state shared between TX and RX. The w_RX_DV signal asserts when a complete byte has been received, confirming successful transmission. Additionally, w_RX_Byte is monitored to ensure the received data matches the original value sent from r_TX_Byte. The combined use of TX and RX modules in this waveform confirms reliable end-to-end UART communication.
+
 ![Transmitter Console Output](./screenshots/TX_console.png)
 ![Transmitter Output 1](./screenshots/TX_waveform1.png)
 ![Transmitter Output 2](./screenshots/TX_waveform2.png)
