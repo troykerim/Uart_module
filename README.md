@@ -5,9 +5,23 @@ This project implements a UART communication system in Verilog, consisting of tw
 
 ## Results
 
-### Reciever Output
+### Reciever Results
 
-![Reciever Output](./screenshots/RX_console.png)
+![Reciever Console Output](./screenshots/RX_console.png)
+![Reciever Output 1](./screenshots/RX_waveform1.png)
+![Reciever Output 2](./screenshots/RX_waveform2.png)
+![Reciever Output 3](./screenshots/RX_waveform3.png)
+![Reciever Output 4](./screenshots/RX_waveform4.png)
+![Reciever Output 5](./screenshots/RX_waveform5.png)
+
+### Transmitter Results
+![Transmitter Console Output](./screenshots/TX_console.png)
+![Transmitter Output 1](./screenshots/TX_waveform1.png)
+![Transmitter Output 2](./screenshots/TX_waveform2.png)
+![Transmitter Output 3](./screenshots/TX_waveform3.png)
+![Transmitter Output 4](./screenshots/TX_waveform4.png)
+![Transmitter Output 5](./screenshots/TX_waveform5.png)
+
 
 ## To Do 
 - Obtain USBUART Pmod from Digilent and connect UART module to serial terminal to send data from PC to Zybo.
